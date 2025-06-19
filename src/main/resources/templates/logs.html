@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Logs - Spring Boot Error Handling</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Error Handling in Spring Boot</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/examples">Error Examples</a></li>
+                <li><a href="/logs">View Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="logs">
+            <h2>Application Logs</h2>
+            <p>Logs are essential for debugging and monitoring application behavior, especially during error scenarios. Click the button below to refresh the logs.</p>
+            <button id="refresh-logs">Refresh Logs</button>
+            <div id="logs-container">
+                <!-- Log entries will be dynamically inserted here -->
+                <p>No logs loaded yet. Click "Refresh Logs" to view the latest logs.</p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Error Handling Demo</p>
+    </footer>
+    <script src="/js/main.js"></script>
+</body>
+</html>

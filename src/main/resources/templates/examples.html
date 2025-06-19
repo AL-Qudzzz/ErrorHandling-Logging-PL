@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Error Handling Examples - Spring Boot</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Error Handling in Spring Boot</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/examples">Error Examples</a></li>
+                <li><a href="/logs">View Logs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="error-examples">
+            <h2>Error Handling Examples</h2>
+            <p>Below are common error scenarios in Spring Boot applications and how to handle them. Click the buttons to trigger these errors and see the handling in action.</p>
+            
+            <div class="error-container">
+                <div class="error-title">404 Not Found Error</div>
+                <div class="error-description">Occurs when a requested resource is not found.</div>
+                <div class="error-solution">Handled by returning a custom error page or message.</div>
+                <button class="trigger-error" data-error-type="not-found">Trigger 404 Error</button>
+            </div>
+
+            <div class="error-container">
+                <div class="error-title">400 Bad Request Error</div>
+                <div class="error-description">Occurs when the request sent by the client is invalid.</div>
+                <div class="error-solution">Handled by validating input and returning meaningful error messages.</div>
+                <button class="trigger-error" data-error-type="bad-request">Trigger 400 Error</button>
+            </div>
+
+            <div class="error-container">
+                <div class="error-title">401 Unauthorized Error</div>
+                <div class="error-description">Occurs when the client lacks valid authentication credentials.</div>
+                <div class="error-solution">Handled by prompting for authentication or redirecting to a login page.</div>
+                <button class="trigger-error" data-error-type="unauthorized">Trigger 401 Error</button>
+            </div>
+
+            <div class="error-container">
+                <div class="error-title">403 Forbidden Error</div>
+                <div class="error-description">Occurs when the client does not have permission to access the resource.</div>
+                <div class="error-solution">Handled by returning a permission denied message.</div>
+                <button class="trigger-error" data-error-type="forbidden">Trigger 403 Error</button>
+            </div>
+
+            <div class="error-container">
+                <div class="error-title">500 Internal Server Error</div>
+                <div class="error-description">Occurs due to unexpected server-side issues.</div>
+                <div class="error-solution">Handled by catching exceptions and logging errors for debugging.</div>
+                <button class="trigger-error" data-error-type="server-error">Trigger 500 Error</button>
+            </div>
+
+            <div class="error-container">
+                <div class="error-title">503 Service Unavailable Error</div>
+                <div class="error-description">Occurs when the server is temporarily unable to handle the request.</div>
+                <div class="error-solution">Handled by returning a maintenance message or retry mechanism.</div>
+                <button class="trigger-error" data-error-type="service-unavailable">Trigger 503 Error</button>
+            </div>
+
+            <div class="error-container">
+                <div class="error-title">Validation Error</div>
+                <div class="error-description">Occurs when form input does not meet validation criteria.</div>
+                <div class="error-solution">Handled using Spring's validation framework to return specific error messages.</div>
+                <button class="trigger-error" data-error-type="validation">Trigger Validation Error</button>
+            </div>
+
+            <div class="error-container">
+                <div class="error-title">Database Exception</div>
+                <div class="error-description">Occurs when there are issues with database operations.</div>
+                <div class="error-solution">Handled by catching database-specific exceptions and providing fallback options.</div>
+                <button class="trigger-error" data-error-type="database">Trigger Database Error</button>
+            </div>
+
+            <div class="error-container">
+                <div class="error-title">Resource Conflict Error (409)</div>
+                <div class="error-description">Occurs when there is a conflict with the current state of the resource.</div>
+                <div class="error-solution">Handled by informing the user about the conflict and suggesting resolution steps.</div>
+                <button class="trigger-error" data-error-type="conflict">Trigger 409 Error</button>
+            </div>
+
+            <div class="error-container">
+                <div class="error-title">Method Not Allowed Error (405)</div>
+                <div class="error-description">Occurs when the HTTP method used is not supported for the resource.</div>
+                <div class="error-solution">Handled by specifying allowed methods in the response.</div>
+                <button class="trigger-error" data-error-type="method-not-allowed">Trigger 405 Error</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Error Handling Demo</p>
+    </footer>
+    <script src="/js/main.js"></script>
+</body>
+</html>
