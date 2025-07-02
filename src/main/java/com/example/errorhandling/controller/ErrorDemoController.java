@@ -59,7 +59,7 @@ public class ErrorDemoController {
         logger.error("500 Internal Server Error triggered intentionally");
         throw new CustomServerException("An unexpected server error occurred.");
     }
-
+ 
     @GetMapping("/service-unavailable")
     public ResponseEntity<Map<String, String>> triggerServiceUnavailableError() {
         logger.error("503 Service Unavailable error triggered intentionally");
@@ -81,6 +81,7 @@ public class ErrorDemoController {
     @GetMapping("/database")
     public ResponseEntity<Map<String, String>> triggerDatabaseError() {
         logger.error("Database error triggered intentionally");
+        logger.info("Simulasi interaksi dengan database: SELECT * FROM users");
         throw new CustomDatabaseException("Database operation failed due to connection issues.");
     }
 

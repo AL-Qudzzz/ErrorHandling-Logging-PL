@@ -23,6 +23,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CustomBadRequestException.class)
     public ResponseEntity<Map<String, String>> handleBadRequestException(CustomBadRequestException ex, WebRequest request) {
         logger.error("Handling Bad Request Exception: {}", ex.getMessage());
+        logger.info("Request Description: {}", request.getDescription(false));
+        logger.debug("Stacktrace: ", ex);
         Map<String, String> response = new HashMap<>();
         response.put("error", "Bad Request");
         response.put("message", ex.getMessage());
@@ -32,6 +34,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CustomServerException.class)
     public ResponseEntity<Map<String, String>> handleServerException(CustomServerException ex, WebRequest request) {
         logger.error("Handling Server Exception: {}", ex.getMessage());
+        logger.info("Request Description: {}", request.getDescription(false));
+        logger.debug("Stacktrace: ", ex);
         Map<String, String> response = new HashMap<>();
         response.put("error", "Internal Server Error");
         response.put("message", ex.getMessage());
@@ -41,6 +45,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(CustomDatabaseException.class)
     public ResponseEntity<Map<String, String>> handleDatabaseException(CustomDatabaseException ex, WebRequest request) {
         logger.error("Handling Database Exception: {}", ex.getMessage());
+        logger.info("Request Description: {}", request.getDescription(false));
+        logger.debug("Stacktrace: ", ex);
         Map<String, String> response = new HashMap<>();
         response.put("error", "Database Error");
         response.put("message", ex.getMessage());
@@ -50,6 +56,8 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<Map<String, String>> handleGlobalException(Exception ex, WebRequest request) {
         logger.error("Unhandled exception occurred: {}", ex.getMessage());
+        logger.info("Request Description: {}", request.getDescription(false));
+        logger.debug("Stacktrace: ", ex);
         Map<String, String> response = new HashMap<>();
         response.put("error", "Unexpected Error");
         response.put("message", "An unexpected error occurred. Please try again later.");

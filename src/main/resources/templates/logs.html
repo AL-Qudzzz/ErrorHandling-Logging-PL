@@ -20,10 +20,14 @@
         <section id="logs">
             <h2>Application Logs</h2>
             <p>Logs are essential for debugging and monitoring application behavior, especially during error scenarios. Click the button below to refresh the logs.</p>
-            <button id="refresh-logs">Refresh Logs</button>
+            <button class="log-filter" data-filter="controller">Controller Logs</button>
+            <button class="log-filter" data-filter="service">Service Logs</button>
+            <button class="log-filter" data-filter="exception">Exception Logs</button>
+            <button class="log-filter" data-filter="database">Database Logs</button>
+            <button class="log-filter" data-filter="scheduled">Scheduled Logs</button>
+            <button id="refresh-logs">Refresh All Logs</button>
             <div id="logs-container">
-                <!-- Log entries will be dynamically inserted here -->
-                <p>No logs loaded yet. Click "Refresh Logs" to view the latest logs.</p>
+                <p>No logs loaded yet. Click a button above to view the logs.</p>
             </div>
         </section>
     </main>
